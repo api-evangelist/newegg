@@ -1,0 +1,32 @@
+generated: '2026-07-20'
+method: searched
+source: https://developer.newegg.com/
+notes: >-
+  First-party Newegg Marketplace SDKs for .NET (C#) and Java, published by the
+  Newegg org on GitHub and to the public NuGet and Maven Central registries.
+  Both wrap the Newegg Marketplace API request/response object models and add
+  retry, logging, and async support.
+packages:
+  - language: csharp
+    registry: nuget
+    name: Newegg.Marketplace.SDK
+    url: https://www.nuget.org/packages/Newegg.Marketplace.SDK
+    repo: https://github.com/Newegg/newegg-marketplace-sdk-dotnet
+    install: dotnet add package Newegg.Marketplace.SDK
+    latest_version: 1.0.10
+    target: .NET Standard 2.0 (.NET Framework 4.6+, .NET Core 2.1+)
+    official: true
+  - language: java
+    registry: maven-central
+    name: com.newegg.marketplace:sdk-all
+    url: https://central.sonatype.com/artifact/com.newegg.marketplace/sdk-all
+    repo: https://github.com/Newegg/newegg-marketplace-sdk-java
+    install: |
+      <dependency>
+        <groupId>com.newegg.marketplace</groupId>
+        <artifactId>sdk-all</artifactId>
+        <version>2.0.0</version>
+      </dependency>
+    latest_version: 2.0.0
+    target: Java 1.8+
+    official: true

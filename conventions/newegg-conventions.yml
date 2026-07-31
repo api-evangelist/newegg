@@ -1,0 +1,50 @@
+generated: '2026-07-20'
+method: searched
+source: https://developer.newegg.com/newegg_marketplace_api/newegg-developers-quick-guide/
+authentication:
+  style: api-key
+  headers: [Authorization, SecretKey]
+  seller_scope: sellerid (query parameter)
+  ref: authentication/newegg-authentication.yml
+content_negotiation:
+  request: [application/json, application/xml]
+  response: [application/json, application/xml]
+  notes: >-
+    The Marketplace API accepts and returns both JSON and XML; the desired
+    format is selected via the Content-Type and Accept headers.
+idempotency:
+  supported: false
+  notes: >-
+    Newegg does not document an idempotency-key mechanism. Bulk mutations are
+    submitted through the DataFeed Management module as asynchronous batch feeds
+    that are polled for status, rather than idempotent synchronous writes.
+pagination:
+  style: page-number
+  request_fields: [PageIndex, PageSize]
+  response_fields: [PageInfo, TotalCount]
+  notes: >-
+    List/report operations use page-number pagination (PageIndex/PageSize) with
+    a PageInfo block echoing totals in the response.
+batch_processing:
+  module: DataFeed Management
+  pattern: submit-feed -> receive RequestId -> poll feed status/result
+  notes: >-
+    Item, inventory, price, and order updates can be submitted in bulk as data
+    feeds; the submission returns a RequestId used to poll processing status.
+versioning:
+  scheme: dated / per-response version numbers (e.g. RMA version 320)
+  ref: changelog/newegg-changelog.yml
+error_envelope:
+  fields: [IsSuccess, SellerContent, ResponseHeaders]
+  notes: >-
+    Responses carry an IsSuccess flag; failed calls return error detail in the
+    response body. Newegg does not use RFC 9457 problem+json.
+rate_limiting:
+  documented: true
+  notes: >-
+    The developer guide includes a Throttling section describing per-API call
+    limits; specific numeric limits are published per endpoint in the docs.
+cross_reference:
+  authentication: authentication/newegg-authentication.yml
+  lifecycle: lifecycle/newegg-lifecycle.yml
+  changelog: changelog/newegg-changelog.yml

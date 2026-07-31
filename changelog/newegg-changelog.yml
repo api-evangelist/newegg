@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: searched
+source: https://developer.newegg.com/whats-new/
+scheme: dated release notes ("What's New")
+current_version: null
+notes: >-
+  Newegg tracks Marketplace API and SDK changes as dated "What's New" entries
+  rather than semantic version tags. Recent window captured below.
+entries:
+  - date: '2026-06-22'
+    breaking: false
+    highlights:
+      - Newegg Marketplace SDK announced (official .NET and Java client libraries).
+  - date: '2020-03-09'
+    breaking: false
+    highlights:
+      - Added shipping-label API calls for Newegg and multi-channel orders.
+      - Return management updated to require RMA notes.
+  - date: '2018-12-28'
+    breaking: true
+    highlights:
+      - Retired Inventory Snapshot Report template v1.0; split into separate
+        price and inventory report templates.

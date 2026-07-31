@@ -1,0 +1,29 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.newegg.com/.well-known/security.txt
+notes: >-
+  Probed the /.well-known/ discovery surface on the corporate host
+  (www.newegg.com), the developer portal (developer.newegg.com), and the API
+  host (api.newegg.com). Only the corporate security.txt returned 200; the
+  Marketplace API is API-key authenticated (no OAuth/OIDC), so no
+  openid-configuration or oauth-authorization-server documents exist.
+hosts:
+  - host: https://www.newegg.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: newegg-security.txt
+  - host: https://developer.newegg.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+  - host: https://api.newegg.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404

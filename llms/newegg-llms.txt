@@ -1,0 +1,25 @@
+# Newegg
+
+> Newegg is a leading global e-commerce retailer of computer hardware, consumer electronics, and tech-focused products. For sellers it operates the Newegg Marketplace, exposed programmatically through the Newegg Marketplace API — a REST-style, API-key-authenticated interface (JSON or XML) covering item, order, shipping, RMA, datafeed, report, seller, and SBN (Shipped By Newegg) management across the Newegg.com (US), NeweggBusiness.com (B2B), and Newegg.ca (Canada) platforms.
+
+## APIs
+- [Newegg Marketplace API](https://developer.newegg.com/newegg_marketplace_api/): Seller integration API for item, order, shipping, RMA, datafeed, report, seller, and SBN management. Host: https://api.newegg.com/marketplace/
+
+## Docs
+- [Developer Portal](https://developer.newegg.com/): Documentation, SDKs, service status, and what's new.
+- [Marketplace API Documentation](https://developer.newegg.com/newegg_marketplace_api/)
+- [Developer's Quick Guide](https://developer.newegg.com/newegg_marketplace_api/newegg-developers-quick-guide/): Getting started, common request headers, throttling.
+- [What's New / Changelog](https://developer.newegg.com/whats-new/)
+- [Service Status](https://developer.newegg.com/status/)
+- [Seller Academy](https://sellerportal.newegg.com/selleracademy/)
+
+## SDKs
+- [.NET SDK (C#)](https://github.com/Newegg/newegg-marketplace-sdk-dotnet): NuGet `Newegg.Marketplace.SDK`
+- [Java SDK](https://github.com/Newegg/newegg-marketplace-sdk-java): Maven `com.newegg.marketplace:sdk-all`
+
+## Authentication
+- API-key auth via `Authorization` and `SecretKey` request headers, scoped by `sellerid`. Credentials issued to registered marketplace sellers (Datafeeds@newegg.com). No OAuth2/OIDC.
+
+## Security
+- [Vulnerability Disclosure Policy](https://kb.newegg.com/knowledge-base/newegg-vulnerability-disclosure-policy/)
+- [security.txt](https://www.newegg.com/.well-known/security.txt)

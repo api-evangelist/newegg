@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: searched
+source: https://developer.newegg.com/newegg_marketplace_api/
+docs: https://developer.newegg.com/newegg_marketplace_api/newegg-developers-quick-guide/
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  oauth2_flows: []
+  notes: >-
+    Static credential authentication. There is no OAuth2/OIDC surface. Each
+    request carries two custom headers plus the seller identifier as a query
+    parameter. API Key and Secret Key are issued to registered marketplace
+    sellers (request via Datafeeds@newegg.com).
+schemes:
+  - name: Authorization
+    type: apiKey
+    in: header
+    parameter: Authorization
+    description: The seller's Newegg Marketplace API Key.
+  - name: SecretKey
+    type: apiKey
+    in: header
+    parameter: SecretKey
+    description: The seller's Newegg Marketplace Secret Key, paired with the API Key.
+  - name: sellerid
+    type: apiKey
+    in: query
+    parameter: sellerid
+    description: >-
+      The seller account identifier scoping the request to a marketplace seller.
+common_headers:
+  Content-Type: application/json  # application/xml also supported
+  Accept: application/json        # application/xml also supported
+platforms:
+  - name: Newegg.com (US)
+    host: https://api.newegg.com/marketplace/
+  - name: NeweggBusiness.com (B2B)
+    host: https://api.newegg.com/marketplace/
+  - name: Newegg.ca (Canada)
+    host: https://api.newegg.com/marketplace/
+notes: >-
+  Resource URL and credentials differ per Newegg platform (US / Business / CA);
+  the API host is api.newegg.com for all three, distinguished by seller
+  credentials.

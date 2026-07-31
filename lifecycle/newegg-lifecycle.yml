@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: searched
+source: https://developer.newegg.com/
+versioning:
+  scheme: dated releases with per-response version numbers
+  docs: https://developer.newegg.com/whats-new/
+  notes: >-
+    The Marketplace API is versioned by dated release notes rather than a URI
+    version segment; some responses (e.g. RMA) carry their own numeric version.
+deprecation:
+  policy_url: https://developer.newegg.com/whats-new/
+  sunset_header: false
+  notes: >-
+    Newegg announces retirements through What's New (e.g. the Dec 2018
+    retirement of Inventory Snapshot Report template v1.0) with advance notice,
+    but publishes no formal machine-readable deprecation policy or RFC 8594
+    Sunset/Deprecation header support.
+sla:
+  url: https://developer.newegg.com/status/
+  uptime_target: null
+status_page: https://developer.newegg.com/status/
+deprecated_operations: []

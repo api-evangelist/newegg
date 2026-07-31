@@ -1,9 +1,34 @@
 aid: newegg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/newegg.png
 name: Newegg
-description: 'Newegg is a company surfaced as a portfolio company of insight-partners and added to the
-  API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the
-  enrichment pipeline.'
+description: >-
+  Newegg is a leading global online retailer of computer hardware, consumer
+  electronics, and technology products, operating the Newegg.com (US),
+  NeweggBusiness.com (B2B), and Newegg.ca (Canada) marketplaces. For third-party
+  sellers Newegg exposes the Newegg Marketplace API, an API-key-authenticated,
+  REST-style interface (JSON or XML) covering item management, order management,
+  shipping-label services, RMA/returns, datafeed batch processing, reports,
+  seller management, and Shipped By Newegg (SBN) fulfillment. First-party .NET
+  and Java SDKs, a developer portal, service-status page, and dated release
+  notes support the integration.
 url: https://raw.githubusercontent.com/api-evangelist/newegg/refs/heads/main/apis.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 10
+  pass: local-v1
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -12,16 +37,87 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Consumer
-apis: []
+- E-Commerce
+- Marketplace
+- Retail
+- Electronics
+- Sellers
+- Order Management
+- Fulfillment
+apis:
+- name: Newegg Marketplace API
+  description: >-
+    Seller integration API for the Newegg marketplaces covering item, order,
+    shipping-label, RMA, datafeed, report, seller, and SBN management. Requests
+    and responses are JSON or XML, authenticated with per-seller API Key and
+    Secret Key headers scoped by seller ID.
+  humanURL: https://developer.newegg.com/newegg_marketplace_api/
+  baseURL: https://api.newegg.com/marketplace/
+  tags:
+  - Marketplace
+  - E-Commerce
+  - Order Management
+  - Fulfillment
+  properties:
+  - type: Documentation
+    url: https://developer.newegg.com/newegg_marketplace_api/
+  - type: GettingStarted
+    url: https://developer.newegg.com/newegg_marketplace_api/newegg-developers-quick-guide/
+  - type: Authentication
+    url: authentication/newegg-authentication.yml
+  - type: Conventions
+    url: conventions/newegg-conventions.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/newegg-domain-security.yml
 - type: Website
   url: http://www.newegg.com/
+- type: DeveloperPortal
+  url: https://developer.newegg.com/
+- type: Documentation
+  url: https://developer.newegg.com/newegg_marketplace_api/
+- type: GettingStarted
+  url: https://developer.newegg.com/newegg_marketplace_api/newegg-developers-quick-guide/
+- type: GitHubOrganization
+  url: https://github.com/Newegg
+- type: StatusPage
+  url: https://developer.newegg.com/status/
+- type: ChangeLog
+  url: https://developer.newegg.com/whats-new/
+- type: HelpCenter
+  url: https://kb.newegg.com/
+- type: SignUp
+  url: https://www.newegg.com/sellers/
+- type: PrivacyPolicy
+  url: https://kb.newegg.com/knowledge-base/privacy-policy-newegg/
+- type: Security
+  url: https://kb.newegg.com/knowledge-base/newegg-vulnerability-disclosure-policy/
+- type: Authentication
+  url: authentication/newegg-authentication.yml
+- type: Conventions
+  url: conventions/newegg-conventions.yml
+- type: Packages
+  url: packages/newegg-packages.yml
+- type: SDKs
+  url: packages/newegg-packages.yml
+- type: Lifecycle
+  url: lifecycle/newegg-lifecycle.yml
+- type: ChangeLog
+  url: changelog/newegg-changelog.yml
+- type: WellKnown
+  url: well-known/newegg-well-known.yml
+- type: SecurityTxt
+  url: well-known/newegg-security.txt
+- type: VulnerabilityDisclosure
+  url: security/newegg-vulnerability-disclosure.yml
+- type: LLMsTxt
+  url: llms/newegg-llms.txt
